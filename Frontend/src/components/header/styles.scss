@@ -1,0 +1,25 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 1024px;
+    max-width: 1440px;
+    height: 91px;
+    background-color: black;
+    color: white;
+    margin: 0 auto;
+
+    .logo {
+        margin-left: 28px;
+    }
+
+    ul {
+        display: flex;
+        list-style: none;
+        gap: 219px;
+        margin-right: 91px;
+        font-weight: 400;
+        font-size: 24px;
+        cursor: pointer;
+    }
+}
