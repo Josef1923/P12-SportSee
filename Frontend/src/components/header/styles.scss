@@ -1,13 +1,10 @@
 .header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    min-width: 1024px;
-    max-width: 1440px;
+    align-items: center;    
     height: 91px;
     background-color: black;
-    color: white;
-    margin: 0 auto;
+    color: white; 
 
     .logo {
         margin-left: 28px;
