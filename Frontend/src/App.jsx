@@ -1,7 +1,8 @@
 import { BrowserRouter as Router } from "react-router-dom"
 import Header from "./components/header"
 import Sidebar from "./components/sidebar"
-import './App.scss'
+import Welcome from "./components/dashboard/welcome"
+import './App.scss' 
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
         <div className="main">
           <Sidebar />
           <div className="dashboard">
-            <h1>SportSee</h1>
+            <Welcome/>
           </div>
         </div>
       </div>
