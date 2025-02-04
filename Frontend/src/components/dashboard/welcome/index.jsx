@@ -1,11 +1,16 @@
 import PropTypes from "prop-types"
-import {USER_MAIN_DATA} from "../../../_mocks/userMock"
+import {USER_MAIN_DATA} from "../../../data/userMock"
+import { useParams } from "react-router-dom"
 
 function Welcome ({firstName}) {
+
+    const {id} = useParams();
+    const user = USER_MAIN_DATA.find(user => user.id === id)
+
   
     return (
         <div className="welcome">
-            <h1>Bonjour{firstName}</h1>
+            <h1>Bonjour{user.firstName}</h1>
         </div>
     )
 }
