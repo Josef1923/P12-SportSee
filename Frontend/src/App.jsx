@@ -1,7 +1,7 @@
-import { BrowserRouter as Router } from "react-router-dom"
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
 import Header from "./components/header"
 import Sidebar from "./components/sidebar"
-import Welcome from "./components/dashboard/welcome"
+import Dashboard from "./components/dashboard/dashboard"
 import './App.scss' 
 
 function App() {
@@ -11,9 +11,9 @@ function App() {
         <Header />
         <div className="main">
           <Sidebar />
-          <div className="dashboard">
-            <Welcome/>
-          </div>
+          <Routes>
+            <Route path="/user/:id" element={<Dashboard/>}/>
+          </Routes>
         </div>
       </div>
     </Router>
