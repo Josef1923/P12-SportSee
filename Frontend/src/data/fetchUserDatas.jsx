@@ -21,12 +21,12 @@ function useUser(userId) {
                 //vérification de l'existance des données de session sous forme de tableau
                 if (activity && Array.isArray(activity.sessions)) {
                     //Remplacement de la date par un index de jour
-                    const formatteActivityDatas = activity.sessions.map((session, index) => ({
+                    const formattedActivityDatas = activity.sessions.map((session, index) => ({
                         ...session,
                         day: index + 1,
                     }));   
                     
-                    setUserActivitys(formatteActivityDatas);
+                    setUserActivitys(formattedActivityDatas);
                 }
 
             })
