@@ -1,0 +1,23 @@
+.activity {
+    background-color: #FBFBFB;
+    max-width: 835px;
+    height: 320px;    
+    position: relative;
+
+    .legendTitle {
+        font-size: 15px;
+        font-weight: 500;
+        color: #20253A;
+        position: absolute;
+        top: -5px;
+        left: 60px;
+    }
+    
+    .recharts-legend-item-text {
+        font-weight: 500;
+        font-size: 14px;
+        color: #74798C !important;
+    }
+}
+
+
