@@ -5,8 +5,6 @@ import "./styles.scss";
 
 function Activity({ activityDatas }) {
 
-  console.log(activityDatas);
-
   if (!activityDatas) return <p>Chargement des données dactivité...</p>;
 
   return (

@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 function useUser(userId) {
     const [userDatas, setUserDatas] = useState();
     const [userActivity, setUserActivitys] = useState ();
+    const [userAverageSession, setUserAverageSession] = useState();
    
 
     useEffect(() => {
@@ -27,7 +28,14 @@ function useUser(userId) {
                     }));   
                     
                     setUserActivitys(formattedActivityDatas);
-                }
+
+                //Récupération des données d'activités moyenne de l'utilisateur
+                const averageSession = data.USER_AVERAGE_SESSIONS.find(session => session.userId === userId);
+
+                
+                setUserAverageSession(averageSession);
+                
+            }
 
             })
             .catch((error) => {
@@ -36,7 +44,7 @@ function useUser(userId) {
         });
 },[userId] );
 
-return {userDatas, userActivity};
+return {userDatas, userActivity, userAverageSession};
 }
 
 export { useUser }; 
