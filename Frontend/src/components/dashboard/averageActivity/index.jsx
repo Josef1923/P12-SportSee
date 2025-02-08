@@ -34,9 +34,9 @@ function AverageActivity({ AverageSessionDatas }) {
                            axisLine={false}
                            tickLine={false}
                            tick={{fill: "rgba(255, 255, 255, 1)",dy:-55}} />
-                    <YAxis yAxisId="left" hide={true} />
+                    <YAxis yAxisId="left" hide={true} domain={['dataMin - 30', 'dataMax + 10']} />
                     <Tooltip content={<CustomTooltip />} cursor={false} />
-                    <Line yAxisId="left" type="monotone" dataKey="sessionLength" stroke="#FFFFFF" dot={false} />
+                    <Line yAxisId="left" type="monotone" dataKey="sessionLength" stroke="#FFFFFF" dot={false}/>
                 </LineChart>
             </ResponsiveContainer>
         </div>

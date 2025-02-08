@@ -17,7 +17,7 @@ function Activity({ activityDatas }) {
           <YAxis yAxisId="right" orientation="right" dataKey="kilogram" tickCount={3} />
           <YAxis yAxisId="left" hide={true} dataKey="calories" />
           <Tooltip />
-          <Legend layout="horizontal" verticalAlign="top" align="right" wrapperStyle={{ marginTop: -40, marginRight: 20 }}
+          <Legend layout="horizontal" verticalAlign="top" align="right" wrapperStyle={{ marginTop: -40, marginRight: 20}}
             formatter={(value) => (value === "kilogram" ? "Poids (kg)" : "Calories brûlées (kCal)")} iconType="circle" />
           <Bar yAxisId="right" dataKey="kilogram" fill="#282D30" barSize={10} radius={[10, 10, 0, 0]} />
           <Bar yAxisId="left" dataKey="calories" fill="#E60000" barSize={10} radius={[10, 10, 0, 0]} />
