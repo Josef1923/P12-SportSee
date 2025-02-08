@@ -5,7 +5,7 @@ import Welcome from "../welcome";
 import Header from "../../header";
 import Sidebar from "../../sidebar";
 import Activity from "../userActivity";
-import AverageAcvtivity from "../averageActivity";
+import AverageActivity from "../averageActivity";
 
 function Dashboard() {
 
@@ -16,8 +16,7 @@ function Dashboard() {
     if (!userDatas) {
         return <div>Utilisateur introuvable</div>;
     }
-
-
+  
     return (
         <div className="app">
             <Header/>
@@ -26,7 +25,8 @@ function Dashboard() {
                 <div className="dashboard">
                     <Welcome firstName={userDatas.userInfos.firstName} />
                     <Activity activityDatas={userActivity} />
-                    <AverageAcvtivity AverageSessionDatas={userAverageSession} />
+                    <AverageActivity AverageSessionDatas={userAverageSession ? userAverageSession.sessions : []} />
+
                 </div>
             </div>
         </div>

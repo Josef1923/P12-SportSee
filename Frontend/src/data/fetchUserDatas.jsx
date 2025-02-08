@@ -30,9 +30,7 @@ function useUser(userId) {
                     setUserActivitys(formattedActivityDatas);
 
                 //Récupération des données d'activités moyenne de l'utilisateur
-                const averageSession = data.USER_AVERAGE_SESSIONS.find(session => session.userId === userId);
-
-                
+                const averageSession = data.USER_AVERAGE_SESSIONS.find(session => session.userId === userId);                
                 setUserAverageSession(averageSession);
                 
             }

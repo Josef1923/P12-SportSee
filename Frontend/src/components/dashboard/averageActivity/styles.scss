@@ -1,0 +1,31 @@
+.sessions {
+    background-color: #FF0000;
+    max-width: 258px;
+    height: 263px;
+    border-radius: 5px;
+    margin-top: 30px;
+
+    .graphTitle {        
+        font-weight: 500;
+        font-size: 15px;
+        color: #FFFFFF;    
+        padding-top: 25px;
+        margin-bottom: 0;
+        white-space: pre-line;
+        margin-left: 34px;                                                           
+    }    
+}
+
+.tooltipBackground {
+    background-color: #FFFFFF;
+    height: 25px;
+    width: 39px;
+    background: rgba(255, 255, 255, 0.9);
+
+    .tooltipText {
+        font-size: 8px;
+        font-weight: 500;
+        text-align: center;
+        padding-top: 7px;
+    }
+}
