@@ -1,0 +1,39 @@
+.score {
+    height: 263px;
+    width: 258px;
+    background: #FBFBFB;
+    border-radius: 5px;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    .title {
+        position: absolute;
+        top: 24px;
+        left: 30px;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 24px;
+        margin: 0;
+    }
+
+    .scoreText {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+
+        .scoreRatio {
+            font-weight: 700;
+            font-size: 26px;
+            margin-bottom: 0;
+        }
+
+        .text {
+            font-weight: 500;
+            color: #74798C;
+        }
+    }
+}

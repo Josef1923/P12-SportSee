@@ -7,6 +7,7 @@ import Sidebar from "../../sidebar";
 import Activity from "../userActivity";
 import AverageActivity from "../averageActivity";
 import Performance from "../performances";
+import Objectif from "../objectif"
 
 function Dashboard() {
 
@@ -28,6 +29,7 @@ function Dashboard() {
                     <div className="block">
                         <AverageActivity AverageSessionDatas={userAverageSession ? userAverageSession.sessions : []}/>
                         <Performance performanceDatas={userPerformances}/>
+                        <Objectif score={userDatas.score} todayScore={userDatas?.todayScore} />
                     </div>
                 </div>
             </div>
