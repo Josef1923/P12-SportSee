@@ -1,4 +1,9 @@
 .dashboard {
     margin-top: 68px;
-    margin-left: 107px;
+    margin-left: 107px;  
+   
+    .block {
+        display: flex;
+        justify-content: space-between;
+    }
 }

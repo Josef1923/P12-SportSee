@@ -3,9 +3,6 @@ import { ResponsiveContainer, LineChart, Line, XAxis, Tooltip, YAxis } from "rec
 import "./styles.scss";
 
 
-// Tableau pour convertir les chiffres en jours de la semaine
-const numbersToDays = ["", "L", "M", "M", "J", "V", "S", "D"];
-
 // Composant pour personnalisé Tooltip pour avoir la durée de session d'affichée
 const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
@@ -20,6 +17,9 @@ const CustomTooltip = ({ active, payload }) => {
 
 function AverageActivity({ AverageSessionDatas }) {
 
+    // Tableau pour convertir les chiffres en jours de la semaine
+    const numbersToDays = ["", "L", "M", "M", "J", "V", "S", "D"];
+
     if (!AverageSessionDatas) {
         return <p>Chargement des données activité...</p>;
     }
@@ -30,13 +30,13 @@ function AverageActivity({ AverageSessionDatas }) {
             <ResponsiveContainer width={"100%"} height={"100%"}>
                 <LineChart data={AverageSessionDatas}>
                     <XAxis dataKey="day"
-                           tickFormatter={(day) => numbersToDays[day]}
-                           axisLine={false}
-                           tickLine={false}
-                           tick={{fill: "rgba(255, 255, 255, 1)",dy:-55}} />
-                    <YAxis yAxisId="left" hide={true} domain={['dataMin - 30', 'dataMax + 10']} />
+                        tickFormatter={(day) => numbersToDays[day]}
+                        axisLine={false}
+                        tickLine={false}
+                        tick={{ fill: "rgba(255, 255, 255, 1)", dy: -65 }} />
+                    <YAxis yAxisId="left" hide={true} domain={['dataMin - 50', 'dataMax + 10']} />
                     <Tooltip content={<CustomTooltip />} cursor={false} />
-                    <Line yAxisId="left" type="monotone" dataKey="sessionLength" stroke="#FFFFFF" dot={false}/>
+                    <Line yAxisId="left" type="monotone" dataKey="sessionLength" stroke="#FFFFFF" dot={false} />
                 </LineChart>
             </ResponsiveContainer>
         </div>

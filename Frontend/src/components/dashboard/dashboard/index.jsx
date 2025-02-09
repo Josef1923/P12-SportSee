@@ -6,27 +6,29 @@ import Header from "../../header";
 import Sidebar from "../../sidebar";
 import Activity from "../userActivity";
 import AverageActivity from "../averageActivity";
+import Performance from "../performances";
 
 function Dashboard() {
 
     const { id } = useParams();
-    const  { userDatas, userActivity, userAverageSession} = useUser(parseInt(id));
+    const { userDatas, userActivity, userAverageSession, userPerformances } = useUser(parseInt(id));
 
-    
     if (!userDatas) {
         return <div>Utilisateur introuvable</div>;
     }
-  
+
     return (
         <div className="app">
-            <Header/>
+            <Header />
             <div className="main">
-                <Sidebar/>
+                <Sidebar />
                 <div className="dashboard">
-                    <Welcome firstName={userDatas.userInfos.firstName} />
-                    <Activity activityDatas={userActivity} />
-                    <AverageActivity AverageSessionDatas={userAverageSession ? userAverageSession.sessions : []} />
-
+                    <Welcome firstName={userDatas.userInfos.firstName}/>
+                    <Activity activityDatas={userActivity}/>
+                    <div className="block">
+                        <AverageActivity AverageSessionDatas={userAverageSession ? userAverageSession.sessions : []}/>
+                        <Performance performanceDatas={userPerformances}/>
+                    </div>
                 </div>
             </div>
         </div>

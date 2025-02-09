@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import logo from "../../assets/logo/logo.svg";
 import "./styles.scss";
 
@@ -10,7 +11,7 @@ function Header () {
             </div>
             <nav>
                 <ul>
-                    <li>Accueil</li>
+                <li><Link to="/" className="homeLink">Accueil</Link></li>
                     <li>Profil</li>
                     <li>Réglage</li>
                     <li>Communauté</li>
