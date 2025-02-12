@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from 'recharts';
+import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer, Tooltip } from 'recharts';
 import './styles.scss';
 
 
@@ -30,7 +30,7 @@ function Performance({ performanceDatas }) {
     const sortedData = [...translatedNames].sort(
         (a, b) => correctOrder.indexOf(a.kind) - correctOrder.indexOf(b.kind)
     );
-
+    
     return (
         <div className="performances">
             <ResponsiveContainer width="100%" height="100%">
@@ -38,6 +38,7 @@ function Performance({ performanceDatas }) {
                     <PolarGrid radialLines={false} />
                     <PolarAngleAxis dataKey="kind" tick={{ fontSize: 12, fontWeight: 500, fill: "#FFFFFF" }} />
                     <Radar name="Mike" dataKey="value" fill="#FF0101" fillOpacity={0.7} />
+                    <Tooltip cursor={false} />
                 </RadarChart>
             </ResponsiveContainer>
         </div>

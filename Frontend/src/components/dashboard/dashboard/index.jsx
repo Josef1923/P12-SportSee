@@ -20,7 +20,7 @@ function Dashboard() {
     }
 
     return (
-        <div className="app">
+        <div className="mainContainer">
             <Header />
             <div className="main">
                 <Sidebar />
