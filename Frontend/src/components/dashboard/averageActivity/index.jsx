@@ -15,18 +15,19 @@ const CustomTooltip = ({ active, payload }) => {
     return null;
 };
 
-//Composant pour personnalisé Tooltip pour avoir le coté rouge dponcé à droite
+//Composant pour personnalisé Tooltip pour avoir le coté rouge foncé à droite
 const CustomCursor = ({ points, width }) => {
+    //position de la souris sur le grpahique
     const { x } = points[0];
 
     return (
         <Rectangle 
         className="customCursor"
             fill="rgba(0, 0, 0, 0.2)"
-            x={x}
-            y={0}
-            width={width}
-            height={263}
+            x={x} // début du rectangle sur le placement de la souris
+            y={0} // début rectangle haut du graphique
+            width={width} // largeur du rectangle
+            height={263} // hauteur du rectangle
         />
     );
 };

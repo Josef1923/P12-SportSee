@@ -5,6 +5,24 @@ import './styles.scss';
 
 function Performance({ performanceDatas }) {
 
+    const CustomTooltip = ({ active, payload }) => {
+        if (active && payload && payload.length) {
+            return (
+                <div className="tooltipBackground">
+                    <p className="tooltipText">{`${payload[0].payload.kind} : ${payload[0].value}`}</p>
+                </div>
+            );
+        }
+        return null;
+    };
+    
+    // Validation des props
+    CustomTooltip.propTypes = {
+        active: PropTypes.bool,
+        payload: PropTypes.array,
+    };
+    
+console.log(performanceDatas)
     // Base traduction des kind
     const translate = {
         cardio: "Cardio",
@@ -38,7 +56,7 @@ function Performance({ performanceDatas }) {
                     <PolarGrid radialLines={false} />
                     <PolarAngleAxis dataKey="kind" tick={{ fontSize: 12, fontWeight: 500, fill: "#FFFFFF" }} />
                     <Radar name="Mike" dataKey="value" fill="#FF0101" fillOpacity={0.7} />
-                    <Tooltip cursor={false} />
+                    <Tooltip content={<CustomTooltip />} cursor={false} />
                 </RadarChart>
             </ResponsiveContainer>
         </div>

@@ -4,4 +4,21 @@
     background: #282D30;
     border-radius: 5px;
     margin-top: 30px;
+
+    .tooltipBackground {
+        background: rgba(255, 255, 255, 0.9);
+        height: 25px;
+        width: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 3px;
+
+        .tooltipText {
+            font-size: 8px;
+            font-weight: 500;
+            text-align: center;
+            padding-top: 2px;
+        }
+    }
 }
