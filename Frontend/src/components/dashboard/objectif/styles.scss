@@ -8,6 +8,10 @@
     align-items: center;
     position: relative;
 
+    @media (max-height: 910px) {
+        height: 240px;
+    }
+
     .title {
         position: absolute;
         top: 24px;

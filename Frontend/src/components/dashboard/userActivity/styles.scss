@@ -4,6 +4,10 @@
     height: 320px;    
     position: relative;
 
+    @media (max-height: 910px) {
+        height: 300px;
+    }
+
     .legendTitle {
         font-size: 15px;
         font-weight: 500;

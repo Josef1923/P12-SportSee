@@ -3,9 +3,18 @@
     font-weight: 500;
     margin-bottom: 55px;
 
+    @media (max-height: 910px) {
+        margin-bottom: 5px;
+        font-size: 20px;
+    }
+
     h1 {
         margin-bottom: 31px;
         margin-top: 0;
+
+        @media (max-height: 910px) {
+            margin-bottom: 5px;
+        }
     }
 
     .firstname {
