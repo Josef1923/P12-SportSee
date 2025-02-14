@@ -11,8 +11,8 @@ function Activity({ activityDatas }) {
     if (active && payload && payload.length) {
       return (
         <div className="customTooltip">
-          <p className="tooltip-item">{`${payload[0].value}kg`}</p>
-          <p className="tooltip-item">{`${payload[1].value} Kcal`}</p>
+          <p>{`${payload[0].value}kg`}</p>
+          <p>{`${payload[1].value} Kcal`}</p>
         </div>
       );
     }
