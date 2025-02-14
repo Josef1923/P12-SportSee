@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import userMockedDatas from "./userDatas.json";
+import userMockedDatas from "../data/userDatas.json";
 
 function useUser(userId) {
     const [userDatas, setUserDatas] = useState();

@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { useUser } from "../../../data/fetchUserDatas";
+import { useUser } from "../../data/preparedUserDatas";
 import "./styles.scss";
 import Welcome from "../../components/dashboard/welcome";
 import Header from "../../components/header";
