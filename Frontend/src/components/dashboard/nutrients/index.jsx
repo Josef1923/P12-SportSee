@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
 import "./styles.scss";
-import carbohydrateIcon from "../../../assets/icons/nutrition/carbohydrate.svg";
-import kcalIcon from "../../../assets/icons/nutrition/kcal.svg";
-import lipidIcon from "../../../assets/icons/nutrition/lipid.svg";
-import proteinIcon from "../../../assets/icons/nutrition/protein.svg";
+import carbohydrateIcon from "@/assets/icons/nutrition/carbohydrate.svg";
+import kcalIcon from "@/assets/icons/nutrition/kcal.svg";
+import lipidIcon from "@/assets/icons/nutrition/lipid.svg";
+import proteinIcon from "@/assets/icons/nutrition/protein.svg";
 
 
 function Nutrient({ infos }) {

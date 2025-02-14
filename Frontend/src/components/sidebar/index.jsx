@@ -1,7 +1,7 @@
-import zen from "../../assets/icons/sidebar/zen.svg";
-import swim from "../../assets/icons/sidebar/swim.svg";
-import bike from "../../assets/icons/sidebar/bike.svg";
-import dumbbell from "../../assets/icons/sidebar/dumbbell.svg";
+import zen from "@/assets/icons/sidebar/zen.svg";
+import swim from "@/assets/icons/sidebar/swim.svg";
+import bike from "@/assets/icons/sidebar/bike.svg";
+import dumbbell from "@/assets/icons/sidebar/dumbbell.svg";
 import "./styles.scss";
 
 
