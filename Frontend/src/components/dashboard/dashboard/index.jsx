@@ -4,11 +4,11 @@ import "./styles.scss";
 import Welcome from "../welcome";
 import Header from "../../header";
 import Sidebar from "../../sidebar";
-import Activity from "../userActivity";
-import AverageActivity from "../averageActivity";
-import Performance from "../performances";
-import Objectif from "../objectif"
-import Nutrient from "../nutrients";
+import Activity from "@components/userActivity";
+import AverageActivity from "@components/averageActivity";
+import Performance from "@components/performances";
+import Objectif from "@components/objectif"
+import Nutrient from "@components/nutrients";
 
 function Dashboard() {
 
