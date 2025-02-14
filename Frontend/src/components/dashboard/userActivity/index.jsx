@@ -7,6 +7,25 @@ function Activity({ activityDatas }) {
 
   if (!activityDatas) return <p>Chargement des données dactivité...</p>;
 
+  const CustomTooltip = ({ active, payload }) => {
+    if (active && payload && payload.length) {
+      return (
+        <div className="customTooltip">
+          <p className="tooltip-item">{`${payload[0].value}kg`}</p>
+          <p className="tooltip-item">{`${payload[1].value} Kcal`}</p>
+        </div>
+      );
+    }
+    return null;
+  };
+
+   // Validation des props
+      CustomTooltip.propTypes = {
+          active: PropTypes.bool,
+          payload: PropTypes.array,
+      };
+
+
   return (
     <div className="activity">
       <p className="legendTitle">Activité quotidienne</p>
@@ -16,7 +35,7 @@ function Activity({ activityDatas }) {
           <XAxis dataKey="day" />
           <YAxis yAxisId="right" orientation="right" dataKey="kilogram" tickCount={3} />
           <YAxis yAxisId="left" hide={true} dataKey="calories" />
-          <Tooltip />
+          <Tooltip content={<CustomTooltip />} />
           <Legend layout="horizontal" verticalAlign="top" align="right" wrapperStyle={{ marginTop: -40, marginRight: 20}}
             formatter={(value) => (value === "kilogram" ? "Poids (kg)" : "Calories brûlées (kCal)")} iconType="circle" />
           <Bar yAxisId="right" dataKey="kilogram" fill="#282D30" barSize={10} radius={[10, 10, 0, 0]} />
