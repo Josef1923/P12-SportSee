@@ -30,9 +30,9 @@ function Dashboard() {
                         <div>
                             <Activity activityDatas={userActivity} />
                             <div className="block">
-                                <AverageActivity AverageSessionDatas={userAverageSession ? userAverageSession.sessions : []} />
+                                <AverageActivity AverageSessionDatas={userAverageSession} />
                                 <Performance performanceDatas={userPerformances} />
-                                <Objectif score={userDatas.score} todayScore={userDatas.todayScore} />
+                                <Objectif score={userDatas.score} />
                             </div>
                         </div>
                         <div className="lastBlock">

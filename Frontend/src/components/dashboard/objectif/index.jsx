@@ -3,17 +3,16 @@ import { RadialBarChart, RadialBar, ResponsiveContainer } from 'recharts';
 
 import "./styles.scss";
 
-function Objectif({ score, todayScore }) {
+function Objectif({ score }) {
 
-    const scoreToUse = score ?? todayScore;
 
-    if (!scoreToUse) {
-        return <p>Chargement des données activité...</p>;
-    }
+    // Transformation du score en pourcentage
+    const scoreInPercentage = score * 100;
 
+    // Données pour le graphique
     const data = [
-        { name: "Score", value: scoreToUse * 100, fill: "#FF0000" },
-        { name: "Reste", value: 100 - (scoreToUse * 100), fill: "#FBFBFB" }
+        { name: "Score", value: scoreInPercentage, fill: "#FF0000" },
+        { name: "Reste", value: 100 - scoreInPercentage, fill: "#FBFBFB" },
     ];
 
     return (
@@ -28,7 +27,7 @@ function Objectif({ score, todayScore }) {
                 </RadialBarChart>
             </ResponsiveContainer>
             <div className="scoreText">
-                <p className="scoreRatio">{scoreToUse * 100}%</p>
+                <p className="scoreRatio">{scoreInPercentage}%</p>
                 <p className="text">de votre<br /> objectif</p>
             </div>
         </div>

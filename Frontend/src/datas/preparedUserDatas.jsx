@@ -1,49 +1,61 @@
 import { useState, useEffect } from "react";
 import userMockedDatas from "./userDatas.json";
 
+// Standardisation des données utilisateur
+function standardizedUserDatas(userDatas) {
+    return {
+        id: userDatas.id,
+        userInfos: userDatas.userInfos,
+        score: userDatas.todayScore ?? userDatas.score ?? 0, // Normalisation du score
+        keyData: userDatas.keyData,
+    };
+}
+
+// Standardisation des performances utilisateur
+function standardizedUserPerformance(performanceData) {
+    return performanceData.data.map((item) => ({
+        value: item.value,
+        kind: performanceData.kind[item.kind] // Remplace le num de kind par le nom
+    }));
+}
+
 function useUser(userId) {
     const [userDatas, setUserDatas] = useState();
     const [userActivity, setUserActivitys] = useState();
     const [userAverageSession, setUserAverageSession] = useState();
     const [userPerformances, setUserPerformances] = useState();
 
-
     useEffect(() => {
         const data = userMockedDatas;
 
-        //Récupération des données principales de l'utilisateur
+        // Récupération des données principales de l'utilisateur
         const user = data.USER_MAIN_DATA.find(user => user.id === userId);
-        setUserDatas(user);
+        if (user) {
+            setUserDatas(standardizedUserDatas(user)); 
+        }
 
-        //Récupération des données d'activités de l'utilisateur
+        // Récupération et formatage des données d'activités
         const activity = data.USER_ACTIVITY.find(activity => activity.userId === userId);
-
-        //vérification de l'existance des données de session sous forme de tableau
         if (activity && Array.isArray(activity.sessions)) {
-            //Remplacement de la date par un index de jour
             const formattedActivityDatas = activity.sessions.map((session, index) => ({
                 ...session,
-                day: index + 1,
+                day: index + 1, // Convertir la date en index
             }));
-
             setUserActivitys(formattedActivityDatas);
         }
 
-        //Récupération des données d'activités moyenne de l'utilisateur
+        // Récupération des sessions moyennes
         const averageSession = data.USER_AVERAGE_SESSIONS.find(session => session.userId === userId);
-        setUserAverageSession(averageSession);
+        setUserAverageSession(averageSession ? averageSession.sessions : []);
 
-
+        // Récupération des performances utilisateur
         const performances = data.USER_PERFORMANCE.find(perf => perf.userId === userId);
         if (performances) {
-            const formattedPerfs = performances.data.map((item) => ({
-                value: item.value,
-                kind: performances.kind[item.kind]
-            }));
-            setUserPerformances(formattedPerfs);
+            setUserPerformances(standardizedUserPerformance(performances));
         }
     }, [userId]);
+
     return { userDatas, userActivity, userAverageSession, userPerformances };
 }
 
-export { useUser }; 
+export { useUser };
