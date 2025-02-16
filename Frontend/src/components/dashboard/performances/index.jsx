@@ -22,7 +22,6 @@ function Performance({ performanceDatas }) {
         payload: PropTypes.array,
     };
     
-console.log(performanceDatas)
     // Base traduction des kind
     const translate = {
         cardio: "Cardio",
