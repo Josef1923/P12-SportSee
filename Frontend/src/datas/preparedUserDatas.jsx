@@ -40,7 +40,7 @@ function useUser(userId) {
             try {
                 if (isMockEnabled) {
 
-                    console.log("Donnée provenant du mock");    
+                    console.log("Données provenant du mock");    
                     //Mode local
                     const data = userMockedDatas;
 
@@ -66,7 +66,7 @@ function useUser(userId) {
                     if (performances) setUserPerformances(standardizedUserPerformance(performances));
 
                 } else {
-                    console.log("Donnée provenant de l'API");
+                    console.log("Données provenant de l'API");
                     //Mode API
                     const user = await getUser(userId);
                     setUserDatas(standardizedUserDatas(user));
