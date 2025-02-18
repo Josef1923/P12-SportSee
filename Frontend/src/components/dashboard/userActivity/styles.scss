@@ -8,6 +8,10 @@
         height: 300px;
     }
 
+    @media (max-width: 1350px) {
+        max-width: 660px;
+    }
+
     .legendTitle {
         font-size: 15px;
         font-weight: 500;

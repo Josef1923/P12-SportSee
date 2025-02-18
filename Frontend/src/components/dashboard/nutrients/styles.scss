@@ -5,6 +5,11 @@
     background-color: #FBFBFB;   
     display: flex;
 
+    @media (max-width: 1350px) {
+        width: 220px;
+        height: 120px;
+    }
+
     
 
     .icon {
@@ -20,7 +25,11 @@
         .value {
             font-weight: 700;
             font-size: 20px;     
-            margin-bottom: 0;      
+            margin-bottom: 0;   
+            
+            @media (max-width: 1350px) {
+                font-size: 18px;
+            }        
         }
 
         .type {

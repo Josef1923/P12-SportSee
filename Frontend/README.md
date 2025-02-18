@@ -1,8 +1,17 @@
-# React + Vite
+Projet 12 - SportSee (OpenClassrooms)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Utilisation des données API ou locales**
 
-Currently, two official plugins are available:
+L'application peut utiliser des données locales (mockées) ou les récupérer via une API.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Comment basculer entre API et données locales ?**
+
+Dans le fichier preparedUserDatas.jsx (Chemin : src/datas/preparedUserDatas.jsx), il existe une variable "isMockEnabled" (ligne 11); qui contrôle la source des données.
+
+Modifier cette ligne :
+
+const isMockEnabled = true; // false = API, true = données locales
+
+false → L'application récupère les données depuis l'API.
+
+true → L'application utilise les données locales mockées.

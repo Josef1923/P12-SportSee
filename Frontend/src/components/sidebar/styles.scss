@@ -1,6 +1,7 @@
 .sidebar {
     background-color: black;
-    width: 117px;
+    max-width: 117px;
+    min-width: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;

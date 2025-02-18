@@ -8,7 +8,7 @@ import {
 } from "../services/api";
 
 //Switch a false pour désactiver le mode mock
-const isMockEnabled = false;
+const isMockEnabled = true;
 
 // Standardisation des données utilisateur
 function standardizedUserDatas(userDatas) {

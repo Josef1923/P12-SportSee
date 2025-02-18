@@ -27,7 +27,7 @@ function Dashboard() {
                 <div className="dashboard">
                     <Welcome firstName={userDatas.userInfos.firstName} />
                     <div className="bigBlock">
-                        <div>
+                        <div className="activityBlock"> 
                             <Activity activityDatas={userActivity} />
                             <div className="block">
                                 <AverageActivity AverageSessionDatas={userAverageSession} />
