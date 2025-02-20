@@ -49,12 +49,14 @@ function AverageActivity({ AverageSessionDatas }) {
         return <p>Chargement des données activité...</p>;
     }
 
+    const sessionsData = AverageSessionDatas.sessions;
+
     return (
         <div className="sessions">
             <p className="graphTitle">Durée moyenne des{"\n"} sessions</p>
             <div className="chartContainer">
             <ResponsiveContainer width={"100%"} height={"100%"}>
-                <LineChart data={AverageSessionDatas}>
+                <LineChart data={sessionsData}>
                     <XAxis dataKey="day"
                         tickFormatter={(day) => numbersToDays[day]}
                         axisLine={false}
@@ -72,8 +74,15 @@ function AverageActivity({ AverageSessionDatas }) {
 
 // Validation props
 AverageActivity.propTypes = {
-    AverageSessionDatas: PropTypes.array,
-}
+    AverageSessionDatas: PropTypes.shape({
+        sessions: PropTypes.arrayOf(
+            PropTypes.shape({
+                day: PropTypes.number,
+                sessionLength: PropTypes.number,
+            })
+        )
+    })
+};
 
 CustomTooltip.propTypes = {
     active: PropTypes.bool,

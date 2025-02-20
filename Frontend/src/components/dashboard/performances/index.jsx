@@ -4,7 +4,7 @@ import './styles.scss';
 
 
 function Performance({ performanceDatas }) {
-
+    
     const CustomTooltip = ({ active, payload }) => {
         if (active && payload && payload.length) {
             return (
@@ -35,7 +35,7 @@ function Performance({ performanceDatas }) {
     if (!performanceDatas) return <p>Chargement des données dactivité...</p>;
 
     // Traduit les éléments
-    const translatedNames = performanceDatas.map(items => ({
+    const translatedNames = performanceDatas.data.map(items => ({
         ...items, //on garde les valeurs d'origine
         kind: translate[items.kind] //remplacement de kind par version traduite
     }));
@@ -64,12 +64,14 @@ function Performance({ performanceDatas }) {
 
 
 Performance.propTypes = {
-    performanceDatas: PropTypes.arrayOf(
-        PropTypes.shape({
-            value: PropTypes.number,
-            kind: PropTypes.string,
-        })
-    )
+    performanceDatas: PropTypes.shape({
+        data: PropTypes.arrayOf(
+            PropTypes.shape({
+                value: PropTypes.number,
+                kind: PropTypes.string,
+            })
+        )
+    })
 };
 
 export default Performance;

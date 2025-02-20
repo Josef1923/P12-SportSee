@@ -1,17 +1,11 @@
-Projet 12 - SportSee (OpenClassrooms)
+SPORTSEE - Tableau de Bord Sportif (pojet 12 de la formation OpenClassrooms dev app javascript react)
+SportSee est une application de suivi d'activité sportive, développée avec React et Recharts.
 
-**Utilisation des données API ou locales**
+🚀 Installation
+Cloner le projet
 
-L'application peut utiliser des données locales (mockées) ou les récupérer via une API.
+1️⃣ Lancer le backend (API) 📌 Dans le dossier Backend/, exécutez : npm start Démarre le serveur API sur http://localhost:3000
 
-**Comment basculer entre API et données locales ?**
+2️⃣ Lancer le frontend (React) 📌 Dans le dossier Frontend/, exécutez : npm run dev Ouvrez http://localhost:5173 pour accéder à l'application.
 
-Dans le fichier preparedUserDatas.jsx (Chemin : src/datas/preparedUserDatas.jsx), il existe une variable "isMockEnabled" (ligne 11); qui contrôle la source des données.
-
-Modifier cette ligne :
-
-const isMockEnabled = true; // false = API, true = données locales
-
-false → L'application récupère les données depuis l'API.
-
-true → L'application utilise les données locales mockées.
+3️⃣ Activer/Désactiver le mode Mock Dans src/datas/preparedUserDatas.js, modifiez : const isMockEnabled = true; // Mode Mock activé (données locales) 📌 false = utilisation de l’API 🖥 | true = mode Mock 🔄
